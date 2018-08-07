@@ -204,6 +204,8 @@
 	grestore
 } def
 
+% The below code does not work on Mac systems. It must be replaced with the line noted below.
+% Place a % in front of the next 8 lines to not get postscript errors.
 /haveColor glob-known not {
   /haveColor false def
   systemdict /statusdict known {
@@ -212,6 +214,11 @@
     } if
   } if
 } if
+
+% Uncomment the next line to make color files work on a Mac.
+% /haveColor true def
+
+% Uncomment the next line to enable BW only files.
 % /haveColor false def
 
 /ColorNameTable [
@@ -656,7 +663,7 @@ haveColor {
 		neg 0 lineto
 		currentlinewidth //trackWidth setlinewidth stroke setlinewidth
 	} {
-		dup (£) eq {
+		dup (Â£) eq {
 			% small grey
 			pop
 			newpath
